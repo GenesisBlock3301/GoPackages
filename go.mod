@@ -1,3 +1,3 @@
-module github.com/GenesisBlock3301/GoPackages
+module GoPackages
 
 go 1.20
