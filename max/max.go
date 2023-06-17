@@ -1,5 +1,7 @@
 package max
 
-func Add(a int, b int) int {
-	return a + b
+import "log"
+
+func Hello() {
+	log.Print("Hello sifat")
 }

@@ -1,10 +1,7 @@
 package main
 
-import (
-	"GoPackages/max"
-	"fmt"
-)
+import "github.com/GenesisBlock3301/GoPackages/max"
 
 func main() {
-	fmt.Println(max.Add(1, 2))
+	max.Hello()
 }
