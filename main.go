@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(max.Max([]int{1, 2, 3, 4, 5}))
-	fmt.Println(max.Max([]string{"a", "b", "c"}))
+	//fmt.Println(max.Max([]int{1, 2, 3, 4, 5}))
+	fmt.Println(max.Max([]string{"a", "ebbcecc", "c"}))
 }

@@ -1,30 +1,18 @@
 package max
 
-import (
-	"reflect"
-)
+type Comparable interface {
+	int | int32 | int64 | string | float64 | float32
+}
 
-func Max(values interface{}) interface{} {
-	var _max int
-	if reflect.TypeOf(values).Kind() == reflect.Slice && reflect.TypeOf(values).Elem().Kind() == reflect.Int {
-		slice := reflect.ValueOf(values)
-		_max = slice.Index(0).Interface().(int)
-		for i := 1; i < slice.Len(); i++ {
-			value := slice.Index(i).Interface().(int)
-			if _max < value {
-				_max = value
-			}
+func Max[T Comparable](values []T) T {
+	if len(values) == 0 {
+		panic("Empty string")
+	}
+	_max := values[0]
+	for _, value := range values[1:] {
+		if value > _max {
+			_max = value
 		}
-	} else if reflect.TypeOf(values).Kind() == reflect.Slice && reflect.TypeOf(values).Elem().Kind() == reflect.String {
-		slice := reflect.ValueOf(values)
-		sMax := slice.Index(0).Interface().(string)
-		for i := 1; i < slice.Len(); i++ {
-			value := slice.Index(i).Interface().(string)
-			if sMax < value {
-				sMax = value
-			}
-		}
-		return sMax
 	}
 	return _max
 }
